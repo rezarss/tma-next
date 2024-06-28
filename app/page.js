@@ -1,36 +1,33 @@
-'use client'
+// app/page.js
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-function App() {
-  const [userId, setUserId] = useState(null);
+export default function Home() {
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // اطمینان از اینکه اسکریپت Telegram WebApp لود شده است
-    if (window.Telegram?.WebApp) {
+    if (typeof window !== "undefined" && window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
-
-      // فعال کردن Mini App 
-      tg.ready();
-
-      // دریافت ID کاربر
       const user = tg.initDataUnsafe?.user;
       if (user) {
-        setUserId(user.id);
+        setUserData(user);
       }
     }
   }, []);
 
   return (
-    <div className="App">
+    <main>
       <h1>Telegram Mini App</h1>
-      {userId ? (
-        <p>Your Telegram ID is: {userId}</p>
+      {userData ? (
+        <div>
+          <p>Your Telegram ID is: {userData.id}</p>
+          <p>Name: {userData.first_name} {userData.last_name}</p>
+          <p>Username: {userData.username}</p>
+        </div>
       ) : (
-        <p>Loading user ID...</p>
+        <p>Loading user data...</p>
       )}
-    </div>
+    </main>
   );
 }
-
-export default App;
