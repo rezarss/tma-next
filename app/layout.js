@@ -1,21 +1,15 @@
-"use client";
+// app/layout.tsx
+import React from 'react';
 
-import Script from "next/script";
-import { useEffect, useState } from "react";
-
-export default function TelegramScript({ onLoad }) {
-  const handleLoad = () => {
-    if (typeof window !== "undefined" && window.Telegram?.WebApp) {
-      window.Telegram.WebApp.ready();
-      onLoad(true);
-    }
-  };
-
+const Layout = ({ children }) => {
   return (
-    <Script
-      src="https://telegram.org/js/telegram-web-app.js"
-      strategy="afterInteractive"
-      onLoad={handleLoad}
-    />
+    <html lang="en">
+      <head>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+      </head>
+      <body>{children}</body>
+    </html>
   );
-}
+};
+
+export default Layout;
