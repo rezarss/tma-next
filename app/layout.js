@@ -1,11 +1,12 @@
 // app/layout.tsx
 import React from 'react';
+import Script from 'next/script';
 
 const Layout = ({ children }) => {
   return (
     <html lang="en">
       <head>
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <Script src="https://telegram.org/js/telegram-web-app.js"></Script>
       </head>
       <body>{children}</body>
     </html>
