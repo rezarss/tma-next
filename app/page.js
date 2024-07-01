@@ -1,7 +1,8 @@
+'use client'
 import { useEffect, useState } from 'react';
 
 export default function HomePage() {
-  const [userId, setUserId] = useState<string | null>(null);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     // بررسی اینکه آیا window.Telegram موجود است
