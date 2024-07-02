@@ -1,16 +1,9 @@
-// app/layout.tsx
-import React from 'react';
-import Script from 'next/script';
-
-const Layout = ({ children }) => {
+const RootLayout = ({ children }) => {
   return (
-    <html lang="en">
-      <head>
-        <Script src="https://telegram.org/js/telegram-web-app.js"></Script>
-      </head>
+    <html lang="fa" dir="rtl">
       <body>{children}</body>
     </html>
   );
 };
 
-export default Layout;
+export default RootLayout;
