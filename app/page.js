@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import CoinClickerGame from "./components/CoinClickerGame";
 
 export default function Home() {
   const [userId, setUserId] = useState(null);
@@ -26,6 +27,7 @@ export default function Home() {
       ) : (
         <p className="text-xl">Loading...!!</p>
       )}
+      <CoinClickerGame />
     </main>
   );
 }
