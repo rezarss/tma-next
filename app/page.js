@@ -1,12 +1,12 @@
-'use client'
-import { useEffect, useState } from 'react';
+"use client";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     // بررسی اینکه آیا window.Telegram موجود است
-    if (typeof window !== 'undefined' && window.Telegram) {
+    if (typeof window !== "undefined" && window.Telegram) {
       const user = window.Telegram.WebApp.initDataUnsafe.user;
       setUserId(user ? user.id.toString() : null);
     }
@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <div>
       <h1>Telegram Mini App</h1>
-      {userId ? <p>User ID: {userId}</p> : <p>Loading...</p>}
+      {userId ? <p>User ID: {userId}</p> : <p>Loading... Loading... .</p>}
     </div>
   );
 }
