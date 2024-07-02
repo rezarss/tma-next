@@ -22,9 +22,9 @@ export default function Home() {
       />
       <h1 className="text-4xl font-bold mb-8">Telegram Mini App</h1>
       {userId ? (
-        <p className="text-xl">شناسه کاربر شما: {userId}</p>
+        <p className="text-xl">شناسه کاربر شما: {userId} تمام</p>
       ) : (
-        <p className="text-xl">Loading...!</p>
+        <p className="text-xl">Loading...!!</p>
       )}
     </main>
   );
